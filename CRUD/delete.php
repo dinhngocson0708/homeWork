@@ -1,7 +1,7 @@
 <?php 
 include "connect.php";
 $id = $_GET['id'];
-$sql = "DELETE FROM sanphamadmin WHERE id=$id;";
+$sql = "DELETE FROM product WHERE id=$id;";
 
 // 3. Thực thi câu lệnh DELETE
 $result =$mysqli->query($sql);

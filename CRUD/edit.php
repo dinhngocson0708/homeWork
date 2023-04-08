@@ -10,7 +10,7 @@
     <?php 
         include "connect.php";
         $id=$_GET['id'];
-        $sql="SELECT * FROM sanphamadmin where id=$id";
+        $sql="SELECT * FROM product where id=$id";
         $kq=$mysqli->query($sql);
         if(!$kq){
             echo "Lỗi";

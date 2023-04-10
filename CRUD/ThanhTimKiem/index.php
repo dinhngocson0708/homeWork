@@ -13,44 +13,74 @@
     <title>Document</title>
     <style>
         img{
-            width: 300px;
+            width: 250px;
             height:300px
+        }
+        .buttons{
+            display:flex;
+            text-align: center;
+        }
+        .muangay{
+            position: relative;
+            left: 150px;
+            top: 8px;
+        }
+        a{
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
+    <center>
     <form action="index.php" method="post">
         <input type="text" placehoder="Tìm kiếm sản phẩm" name="tukhoa">
         <input type="submit" name="timkiem" value="Tìm kiếm">
     </form>
-
+    </center>
+   
+<br><br>
     <?php 
        if(isset($_POST['timkiem'])){
         $connect=mysqli_connect("localhost","root","","webaoquan");
         $key=$_POST['tukhoa'];
         $query_search="SELECT * from product where nameProduct like '%$key%'";
         $kq=$connect->query($query_search);
-        if ($kq !== FALSE) {
-            // Hiển thị sản phẩm
-            echo '<div class="row">';
-            while ($row = mysqli_fetch_assoc($kq)) {
-                echo '<div class="col-md-3">';
-                echo '<div class="card">';
-                echo '<img src="' . $row['image'] . '" class="card-img-top">';
-                echo '<div class="card-body">';
-                echo '<h5 class="card-title">' . $row['nameProduct'] . '</h5>';
-                echo '<p class="card-text">' . $row['Mota'] . '</p>';
-                echo '<p class="card-text">' . $row['Price'] . '</p>';
-                echo '<a href="xulythemgiohang" class="btn btn-primary">Thêm vào giỏ hàng</a>';
-                echo '</div></div></div>';
-                
+        if (mysqli_num_rows($kq) > 0) {
+            ?>
+                <div class="row">
+            <?php
+                while ($row = mysqli_fetch_assoc($kq)) {
+            ?>
+                    <div class="col-md-3">
+                    <div class="card">
+                    <img src="<?php echo $row['image'] ?>" class="card-img-top">
+                    <div class="card-body">
+                    <h5 class="card-title"><?php echo $row['nameProduct'] ?></h5>
+                    <p class="card-text"><?php echo $row['Mota'] ?></p>
+                    <p class="card-text"><?php echo $row['Price']?></p>
+                    <a href="detail.php?id=<?php echo $row['idProduct']?>">Chi tiết sản phẩm</a>
+                    <br>
+                   
+                        <div class="buttons">
+                            <div><a href="xulythemgiohang.php" ><ion-icon name="cart-outline" style="font-size: 50px"></ion-icon</a></div>
+                            <div class="muangay"><a href="checkout.php" class="btn btn-primary">Mua ngay</a></div>
+                        </div>
+                    
+                    
+                    </div></div></div>
+            <?php     
+                }
+            ?>
+                </div>
+            <?php
+            } else {
+                echo 'Không có sản phẩm nào';
             }
-            echo '</div>';
-        } else {
-            echo 'Không có sản phẩm nào';
         }
-       }
-       
-    ?>
+            
+            // Đóng kết nối
+            mysqli_close($connect);
+            
+        ?>
 </body>
 </html>

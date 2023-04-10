@@ -10,8 +10,20 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <style>
         img{
-            width: 300px;
+            width: 250px;
             height:300px
+        }
+        .buttons{
+            display:flex;
+            text-align: center;
+        }
+        .muangay{
+            position: relative;
+            left: 150px;
+            top: 8px;
+        }
+        a{
+            text-decoration: none;
         }
     </style>
 </head>
@@ -36,9 +48,13 @@
                 <p class="card-text"><?php echo $row['Price']?></p>
                 <a href="detail.php?id=<?php echo $row['idProduct']?>">Chi tiết sản phẩm</a>
                 <br>
-
-                <span><a href="xulythemgiohang.php" class="btn btn-primary"><ion-icon name="cart-outline"></ion-icon</a></span>
-                <span><a href="checkout.php" class="btn btn-primary">Mua ngay</a></span>
+               
+                    <div class="buttons">
+                        <div><a href="xulythemgiohang.php" ><ion-icon name="cart-outline" style="font-size: 50px"></ion-icon</a></div>
+                        <div class="muangay"><a href="checkout.php" class="btn btn-primary">Mua ngay</a></div>
+                    </div>
+                
+                
                 </div></div></div>
         <?php     
             }

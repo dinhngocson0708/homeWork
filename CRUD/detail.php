@@ -25,6 +25,9 @@
             width: 50px;
             text-align: center;
         }
+        img{
+            margin: 20px;
+        }
     </style>
 </head>
 <body>
@@ -65,7 +68,7 @@
                     <b>Số lượng</b>
                     <input type="number" min="1" max="5">
                     <br><br><br>
-                    <a href="xulythemgiohang.php" ><ion-icon name="cart-outline" style="font-size: 100px"></ion-icon</a>
+                    <a href="xulythemgiohang.php" ><ion-icon name="cart-outline" style="font-size: 170px"></ion-icon</a>
                 </div>
             </div> 
             </div>

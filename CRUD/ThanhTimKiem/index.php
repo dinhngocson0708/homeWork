@@ -60,7 +60,6 @@
                     <p class="card-text"><?php echo $row['Price']?></p>
                     <a href="detail.php?id=<?php echo $row['idProduct']?>">Chi tiết sản phẩm</a>
                     <br>
-                   
                         <div class="buttons">
                             <div><a href="xulythemgiohang.php" ><ion-icon name="cart-outline" style="font-size: 50px"></ion-icon</a></div>
                             <div class="muangay"><a href="checkout.php" class="btn btn-primary">Mua ngay</a></div>

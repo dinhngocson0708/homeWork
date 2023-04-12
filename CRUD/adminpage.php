@@ -34,12 +34,13 @@ if($kq=$mysqli->query($sql)){
 ?>
     <table border="1">
     <tr> 
-        <th>ID</th>
+        <th>ID Sản PHẨM</th>
+        <th>ID Danh Mục</th>
         <th>TÊN SP</th>
-        <th>DANH MỤC</th>
-        <th>GIÁ</th>
-        <th>ẢNH</th>
         <th>MÔ TẢ</th>
+        <th>GIÁ</th>
+        <th>SỐ LƯỢNG</th>
+        <th>HÌNH ẢNH</th>
         <th>HÀNH ĐỘNG</th>
     </tr>
     <?php while($row=$kq->fetch_array()){

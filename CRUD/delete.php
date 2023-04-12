@@ -1,7 +1,7 @@
 <?php 
 include "connect.php";
 $id = $_GET['id'];
-$sql = "DELETE FROM product WHERE id=$id;";
+$sql = "DELETE FROM product WHERE idProduct=$id;";
 
 // 3. Thực thi câu lệnh DELETE
 $result =$mysqli->query($sql);
@@ -10,5 +10,5 @@ $result =$mysqli->query($sql);
 mysqli_close($mysqli);
 
 // Sau khi cập nhật dữ liệu, tự động điều hướng về trang Danh sách
-header('location:adminpage.php');
+header('location:Pageadmin.php');
 ?>

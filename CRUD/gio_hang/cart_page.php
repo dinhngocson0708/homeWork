@@ -12,6 +12,7 @@
   </head>
   <body>
     <div class="container">
+        <a href="showProduct.php">Trang chủ</a>
         <div class="row">
             <div class="col-md-12">
                 <div class="card-header">
@@ -23,9 +24,9 @@
                 
                     <table class="table table-bordered table-striped">
                         <?php
-                        include "connect.php";
-                        $sql="SELECT*FROM product";
-                        if($kq=$mysqli->query($sql)){
+                            include "connect.php";
+                            $sql="SELECT product.idProduct,nameProduct,Mota,Price,image,sl from product, shopping_cart where product.idProduct=shopping_cart.idProduct";
+                            if($kq=$mysqli->query($sql)){
                         ?>
                         <thead>
                             <th>TÊN SP</th>
@@ -36,28 +37,29 @@
                             <th>TỔNG TIỀN</th>
                             <th>HÀNH ĐỘNG</th>
                         </thead>
-
+                            
                         <tbody>
                             <?php while($row=$kq->fetch_array()){
                             ?>
                                 <tr>
-                                    <td><?php echo $row['idDanhmuc']?></td>
+
                                     <td><?php echo $row['nameProduct']?></td>
-                                    
-                                    <td><?php echo $row['Price']?></td>
                                     <td><?php echo $row['Mota']?></td>
-                                    <td><input type="number"></td>
+                                    <td><?php echo $row['Price']?></td>
+                                    <td><input type="number" name="sl" value="<?php echo $row['sl'] ?>"></td>
+                                     <select name="" id=""></select>
                                     <td><img src="<?php echo $row['image']?>" alt="" width=100px height=100px></td>
-                                    <td>Tổng tiền:</td>
+                                    <td>Tổng tiền:  <?php echo $row['sl']* $row['Price'] ?></td>
                                     <td>
                                                     <!-- Button XÓA -->
-                                        <a href="delete.php?id=<?php echo $row['idProduct']?>" class="btn btn-primary">
+                                        <a href="deleteCart.php?id=<?php echo $row['idProduct']?>" class="btn btn-primary">
                                         <ion-icon name="trash-outline"></ion-icon>
                                         </a>
 
                         
                                         <!-- <a href="muahang.php?id=">MUA NGAY</a> -->
                                     </td>
+                                    <?php $total_price += ($row["Price"]*$row["sl"]) ?>
                                 </tr>
                     
 
@@ -66,7 +68,8 @@
                                 }
                             ?>
                             <tr>
-                                <td>Tổng tất cả</td>
+                            
+                                <td>Tổng tất cả: <?php echo $total_price ?></td>
                             </tr>
                         <?php
                             }

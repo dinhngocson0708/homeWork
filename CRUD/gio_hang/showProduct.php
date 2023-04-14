@@ -27,20 +27,34 @@
         a{
             text-decoration: none;
         }
+        .cartCount{
+            border: 1px solid;
+            width:30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            background-color: orangered;
+            color: wheat;
+            position: relative;
+            bottom:80px;
+            left: 70px;
+        }
     </style>
 </head>
 <body>
-        <?php
-            if(!empty($_SESSION["shopping_cart"])){
-             $cart_count = count(array_keys($_SESSION["shopping_cart"]));
-        ?>
+        
         <div class="cart_div">
-         <a href="cartPage.php"><ion-icon name="cart-outline" style="color: brown;width: 90px;height: 90px;"></ion-icon ></a>
-        <span><?php echo $cart_count; ?></span>
+         <a href="cart_page.php"><ion-icon name="cart-outline" style="color: brown;width: 90px;height: 90px;"></ion-icon ></a>
+         <?php
+            include "connect.php";
+            $sql="SELECT  *from shopping_cart";
+            $kq=mysqli_query($mysqli,$sql);
+            $count=mysqli_num_rows($kq);
+            echo"<div class='cartCount'>".$count."</div>";
+           
+         ?>
         </div>
-            <?php
-        }
-        ?>   
+           
         <?php 
         include "connect.php";
         $sql="SELECT * from product";

@@ -24,7 +24,7 @@
                     <table class="table table-bordered table-striped">
                         <?php
                         include "connect.php";
-                        $sql="SELECT*FROM shopping_cart";
+                        $sql="SELECT*FROM product";
                         if($kq=$mysqli->query($sql)){
                         ?>
                         <thead>

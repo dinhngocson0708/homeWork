@@ -1,0 +1,75 @@
+/* .searchANDthanhbox .Thanhnavs a{
+    text-decoration: none;
+    padding: 15px;
+    color: brown;
+    
+}
+.menuANDsearchbox .Thanhnav a:hover{
+  color: #FFF;
+  background-color: brown;
+  -webkit-box-shadow: 0px 4px 5px rgba(50, 50, 50, 0.93);
+  -moz-box-shadow:    0px 4px 5px rgba(50, 50, 50, 0.93);
+  box-shadow:         0px 4px 5px rgba(50, 50, 50, 0.93);
+}
+.loginANDcart{
+  margin: 20px;
+ 
+}
+.loginANDcart ion-icon{
+  width: 35px;
+  height: 35px;
+  padding: 5px;
+  color: rgb(154, 48, 48);
+}
+.loginANDcart ion-icon:hover{
+  color: white;
+  background-color: rgb(154, 48, 48);
+} */
+/* css search bar */
+
+.logo{
+  position: relative;
+  top: -20px;
+  padding-left: 10px;
+}
+header {
+  position:static;
+  top: 0;
+  width: 100%;
+  padding: 20px;
+}
+nav{
+  display: flex;
+  justify-content:center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.searchbox{
+ position: absolute;
+ top: 10px;
+ padding-left: 90px;
+}
+ul {
+  display: flex;
+  list-style: none;
+  padding: 10px;
+}
+li a {
+  display: block;
+  padding: 20px 50px;
+  color: brown;
+  text-decoration: none;
+}
+li a:hover{
+  color: #FFF;
+  background-color: brown;
+  -webkit-box-shadow: 0px 4px 5px rgba(50, 50, 50, 0.93);
+  -moz-box-shadow:    0px 4px 5px rgba(50, 50, 50, 0.93);
+  box-shadow:         0px 4px 5px rgba(50, 50, 50, 0.93);
+}
+.loginANDcart a{
+  color: brown;
+  padding-left: 50px;
+}
+

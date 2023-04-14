@@ -62,7 +62,8 @@
                 <br>
                
                     <div class="buttons">
-                        <div><a href="xulycart.php?id=<?php echo $row['dProduct']?>" ><ion-icon name="cart-outline" style="font-size: 50px"></ion-icon</a></div>
+                        <div><a href="xulycart.php?id=<?php echo $row['idProduct']?>" ><ion-icon name="cart-outline" style="font-size: 50px"></ion-icon</a></div>
+                        
                         <div class="muangay"><a href="checkout.php" class="btn btn-primary">Mua ngay</a></div>
                     </div>
                 

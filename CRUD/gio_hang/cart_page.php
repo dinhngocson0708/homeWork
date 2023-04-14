@@ -24,12 +24,10 @@
                     <table class="table table-bordered table-striped">
                         <?php
                         include "connect.php";
-                        $sql="SELECT * 
-                        FROM shopping_cart";
+                        $sql="SELECT*FROM shopping_cart";
                         if($kq=$mysqli->query($sql)){
                         ?>
                         <thead>
-                            <th>ID Sản PHẨM</th>
                             <th>TÊN SP</th>
                             <th>MÔ TẢ</th>
                             <th>GIÁ</th>
@@ -43,13 +41,12 @@
                             <?php while($row=$kq->fetch_array()){
                             ?>
                                 <tr>
-                                    <td><?php echo $row['idProduct']?></td>
                                     <td><?php echo $row['idDanhmuc']?></td>
                                     <td><?php echo $row['nameProduct']?></td>
                                     
                                     <td><?php echo $row['Price']?></td>
                                     <td><?php echo $row['Mota']?></td>
-                                    <td><?php echo $row['soluong'] ?></td>
+                                    <td><input type="number"></td>
                                     <td><img src="<?php echo $row['image']?>" alt="" width=100px height=100px></td>
                                     <td>Tổng tiền:</td>
                                     <td>

@@ -1,6 +1,11 @@
 <?php
     include "connect.php";
     $id=$_GET['id'];
+    $sql="SELECT * FROM shopping_cart where idProduct=$id";
+    $kq=mysqli_query($mysqli,$sql)
+    if($kq->num_rows > 0){
+        
+    }
     $sql="SELECT * from product where idProduct=$id";
     $kq=mysqli_query($mysqli,$sql);
     $row=mysqli_fetch_assoc($kq);
@@ -15,6 +20,6 @@
         $_SESSION["shopping_cart"] = array_merge($_SESSION["shopping_cart"],$cart_array);
         $message = "<div class='box'>Sản phẩm đã được thêm thành công!</div>";
         }
-    
+
     }
 ?>
